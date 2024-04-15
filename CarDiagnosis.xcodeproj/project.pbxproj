@@ -11,6 +11,13 @@
 		FF8851722BCD8D010089D9D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8851712BCD8D010089D9D8 /* ContentView.swift */; };
 		FF8851742BCD8D030089D9D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF8851732BCD8D030089D9D8 /* Assets.xcassets */; };
 		FF8851772BCD8D030089D9D8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF8851762BCD8D030089D9D8 /* Preview Assets.xcassets */; };
+		FF88517E2BCD9B930089D9D8 /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF88517D2BCD9B930089D9D8 /* General.swift */; };
+		FF8851802BCD9BA20089D9D8 /* Diagnosis.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF88517F2BCD9BA20089D9D8 /* Diagnosis.swift */; };
+		FF8851822BCDA1460089D9D8 /* ChatBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8851812BCDA1460089D9D8 /* ChatBot.swift */; };
+		FF8851842BCDA9390089D9D8 /* FinalPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8851832BCDA9390089D9D8 /* FinalPage.swift */; };
+		FF8851862BCDB5620089D9D8 /* FindParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8851852BCDB5620089D9D8 /* FindParts.swift */; };
+		FF8851882BCDB56D0089D9D8 /* FindDealers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8851872BCDB56D0089D9D8 /* FindDealers.swift */; };
+		FF88518A2BCDB70C0089D9D8 /* DiagnosisChatBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8851892BCDB70C0089D9D8 /* DiagnosisChatBot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +26,13 @@
 		FF8851712BCD8D010089D9D8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FF8851732BCD8D030089D9D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF8851762BCD8D030089D9D8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FF88517D2BCD9B930089D9D8 /* General.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
+		FF88517F2BCD9BA20089D9D8 /* Diagnosis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diagnosis.swift; sourceTree = "<group>"; };
+		FF8851812BCDA1460089D9D8 /* ChatBot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBot.swift; sourceTree = "<group>"; };
+		FF8851832BCDA9390089D9D8 /* FinalPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalPage.swift; sourceTree = "<group>"; };
+		FF8851852BCDB5620089D9D8 /* FindParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindParts.swift; sourceTree = "<group>"; };
+		FF8851872BCDB56D0089D9D8 /* FindDealers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindDealers.swift; sourceTree = "<group>"; };
+		FF8851892BCDB70C0089D9D8 /* DiagnosisChatBot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisChatBot.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +67,13 @@
 			children = (
 				FF88516F2BCD8D010089D9D8 /* CarDiagnosisApp.swift */,
 				FF8851712BCD8D010089D9D8 /* ContentView.swift */,
+				FF8851812BCDA1460089D9D8 /* ChatBot.swift */,
+				FF88517D2BCD9B930089D9D8 /* General.swift */,
+				FF88517F2BCD9BA20089D9D8 /* Diagnosis.swift */,
+				FF8851892BCDB70C0089D9D8 /* DiagnosisChatBot.swift */,
+				FF8851832BCDA9390089D9D8 /* FinalPage.swift */,
+				FF8851852BCDB5620089D9D8 /* FindParts.swift */,
+				FF8851872BCDB56D0089D9D8 /* FindDealers.swift */,
 				FF8851732BCD8D030089D9D8 /* Assets.xcassets */,
 				FF8851752BCD8D030089D9D8 /* Preview Content */,
 			);
@@ -137,8 +158,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF8851822BCDA1460089D9D8 /* ChatBot.swift in Sources */,
+				FF8851842BCDA9390089D9D8 /* FinalPage.swift in Sources */,
+				FF88517E2BCD9B930089D9D8 /* General.swift in Sources */,
+				FF88518A2BCDB70C0089D9D8 /* DiagnosisChatBot.swift in Sources */,
 				FF8851722BCD8D010089D9D8 /* ContentView.swift in Sources */,
 				FF8851702BCD8D010089D9D8 /* CarDiagnosisApp.swift in Sources */,
+				FF8851882BCDB56D0089D9D8 /* FindDealers.swift in Sources */,
+				FF8851802BCD9BA20089D9D8 /* Diagnosis.swift in Sources */,
+				FF8851862BCDB5620089D9D8 /* FindParts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
