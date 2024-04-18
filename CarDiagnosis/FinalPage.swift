@@ -15,9 +15,12 @@ struct FinalPage: View {
     @Binding public var carIssue: String
     @Binding public var carDetails: String
     
+    @State public var parts: [String] = []
+    
     @State public var showChatbot = false
     @State public var showParts = false
     @State public var showDealers = false
+
     
     var body: some View {
         ZStack{
@@ -40,14 +43,16 @@ struct FinalPage: View {
                 
                 // go to page for finding parts
                 MainButton(title: "Find Parts"){
+                    // call api for parts here
                     showParts = true
                 }
                 .sheet(isPresented: $showParts){
-                    FindParts()
+                    FindParts(partsList: $parts)
                 }
                 
                 // go to page for finding dealers
                 MainButton(title: "Find Dealers"){
+                    // call api for dealers here
                     showDealers = true
                 }
                 .sheet(isPresented: $showDealers){
@@ -73,10 +78,5 @@ struct BubbleBox: View {
     }
 }
 
-//#Preview{
-//    @State var s1 = "Car Issue"
-//    @State var s2 = "Car Details"
-//    @State var s3 = "Car Diagnosis"
-//    
-//    FinalPage(carDiagnosis: $s3, carIssue: $s2, carDetails: $s1)
-//}
+
+

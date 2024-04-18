@@ -18,6 +18,7 @@
 		FF8851862BCDB5620089D9D8 /* FindParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8851852BCDB5620089D9D8 /* FindParts.swift */; };
 		FF8851882BCDB56D0089D9D8 /* FindDealers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8851872BCDB56D0089D9D8 /* FindDealers.swift */; };
 		FF88518A2BCDB70C0089D9D8 /* DiagnosisChatBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8851892BCDB70C0089D9D8 /* DiagnosisChatBot.swift */; };
+		FFB6D1562BD0BC500068029F /* NetworkRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB6D1552BD0BC500068029F /* NetworkRequests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,8 @@
 		FF8851852BCDB5620089D9D8 /* FindParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindParts.swift; sourceTree = "<group>"; };
 		FF8851872BCDB56D0089D9D8 /* FindDealers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindDealers.swift; sourceTree = "<group>"; };
 		FF8851892BCDB70C0089D9D8 /* DiagnosisChatBot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisChatBot.swift; sourceTree = "<group>"; };
+		FFB6D1552BD0BC500068029F /* NetworkRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequests.swift; sourceTree = "<group>"; };
+		FFB6D1592BD0C0BD0068029F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,9 +68,11 @@
 		FF88516E2BCD8D010089D9D8 /* CarDiagnosis */ = {
 			isa = PBXGroup;
 			children = (
+				FFB6D1592BD0C0BD0068029F /* Info.plist */,
 				FF88516F2BCD8D010089D9D8 /* CarDiagnosisApp.swift */,
 				FF8851712BCD8D010089D9D8 /* ContentView.swift */,
 				FF8851812BCDA1460089D9D8 /* ChatBot.swift */,
+				FFB6D1552BD0BC500068029F /* NetworkRequests.swift */,
 				FF88517D2BCD9B930089D9D8 /* General.swift */,
 				FF88517F2BCD9BA20089D9D8 /* Diagnosis.swift */,
 				FF8851892BCDB70C0089D9D8 /* DiagnosisChatBot.swift */,
@@ -164,6 +169,7 @@
 				FF88518A2BCDB70C0089D9D8 /* DiagnosisChatBot.swift in Sources */,
 				FF8851722BCD8D010089D9D8 /* ContentView.swift in Sources */,
 				FF8851702BCD8D010089D9D8 /* CarDiagnosisApp.swift in Sources */,
+				FFB6D1562BD0BC500068029F /* NetworkRequests.swift in Sources */,
 				FF8851882BCDB56D0089D9D8 /* FindDealers.swift in Sources */,
 				FF8851802BCD9BA20089D9D8 /* Diagnosis.swift in Sources */,
 				FF8851862BCDB5620089D9D8 /* FindParts.swift in Sources */,
@@ -303,6 +309,7 @@
 				DEVELOPMENT_TEAM = 8YW5VMK28L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CarDiagnosis/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -332,6 +339,7 @@
 				DEVELOPMENT_TEAM = 8YW5VMK28L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CarDiagnosis/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

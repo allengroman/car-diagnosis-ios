@@ -7,43 +7,56 @@
 
 import SwiftUI
 
-
-struct DiagnosisView: View{
+struct DiagnosisView: View {
     @State private var carIssues: String = ""
     @State private var carDetails: String = ""
     @State private var carDiagnosis: String = ""
     
     @State private var showFinalPage = false
     
-    var body: some View{
-        ZStack{
+    var body: some View {
+        ZStack {
             MainBackgroundColor()
-            VStack{
+            VStack {
                 Text("Car Brand, Model and Year")
                     .foregroundColor(.white)
                     .bold()
                 TextBox(userInput: $carDetails)
                     .padding(.bottom, 30)
                 
-                
-                Text("Automobile Symptoms (aka whats wrong)")
+                Text("Automobile Symptoms (aka what's wrong)")
                     .foregroundColor(.white)
                     .bold()
                 TextBox(userInput: $carIssues)
                     .padding(.bottom, 30)
                 
-                MainButton(title: "Diagnose Issue"){
-                    carDiagnosis = getDiagnosis(carIssues: carIssues, carDetails: carDetails)
-                    print("Car details: ", carDetails)
-                    print("Car Issues: ", carIssues)
-                    print("Car Diagnosis", carDiagnosis)
-                    showFinalPage = true
+                MainButton(title: "Diagnose Issue") {
+                    fetchDiagnosis(carDetails: carDetails, carIssue: carIssues) { diagnosis in
+                        DispatchQueue.main.async {
+                            carDiagnosis = diagnosis
+                            showFinalPage = true
+                            print("Car details: \(carDetails)")
+                            print("Car Issues: \(carIssues)")
+                            print("Car Diagnosis: \(carDiagnosis)")
+                        }
+                    }
                 }
                 .fullScreenCover(isPresented: $showFinalPage) {
                     FinalPage(carDiagnosis: $carDiagnosis, carIssue: $carIssues, carDetails: $carDetails)
                 }
-                
             }
+        }
+    }
+}
+
+func fetchDiagnosis(carDetails: String, carIssue: String, completion: @escaping (String) -> Void) {
+    let apiService = APIService()
+    apiService.getDiagnosis(carIssue: carIssue, carDetails: carDetails) { result in
+        switch result {
+        case .success(let diagnosis):
+            completion(diagnosis)  // Pass the diagnosis to the completion handler
+        case .failure(let error):
+            completion("Failed to fetch diagnosis: \(error.localizedDescription)")  // Pass the error message
         }
     }
 }
@@ -60,20 +73,6 @@ struct TextBox: View {
     }
 }
 
-// function that inputs car details and issues and outputs diagnosis
-func getDiagnosis(carIssues: String, carDetails: String) -> String {
-    var finalPrompt: String = """
-    Car Details: \(carDetails)
-    Car Symptoms:\(carIssues)
-    
-    Use this information to curate the most probable issue with the car.
-    Give a short but detailed diagnosis on what is wrong with the automobile.
-    """
-    
-    // call api here
-    
-    return "\(carDetails) is having issues with \(carIssues)"
-}
 
 #Preview {
     DiagnosisView()

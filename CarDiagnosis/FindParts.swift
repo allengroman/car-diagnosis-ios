@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct FindParts: View {
+    @Binding public var partsList: [String]
+    private let apiService = APIService() // Assuming you have an APIService that handles the API calls
+
     var body: some View {
-        Text("Find parts")
+        ZStack{
+            MainBackgroundColor() // Set the main background color
+            BubbleBox(text: "")
+        }
     }
 }
 
-#Preview {
-    FindParts()
-}
+

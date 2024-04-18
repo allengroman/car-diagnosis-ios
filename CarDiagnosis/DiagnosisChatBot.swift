@@ -7,21 +7,18 @@
 
 import SwiftUI
 
-
-
-
 struct DiagnosisChatView: View {
     @State private var userInput: String = ""
     @State private var messages: [Message] = []
+    private let apiService = APIService() // Instance of your API service
     
     @Binding public var carIssues: String
     @Binding public var carDetails: String
     @Binding public var carDiagnosis: String
 
     var body: some View {
-        ZStack{
+        ZStack {
             VStack {
-                // Messages will be displayed here
                 List(messages) { message in
                     HStack {
                         if message.isFromUser {
@@ -42,7 +39,6 @@ struct DiagnosisChatView: View {
                     }
                 }
                 
-                // User input area
                 HStack {
                     TextField("Type your message here", text: $userInput)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -63,26 +59,25 @@ struct DiagnosisChatView: View {
 
     func sendMessage() {
         guard !userInput.isEmpty else { return }
-        // Append user message to the messages array
         messages.append(Message(content: userInput, isFromUser: true))
-        
-        // Here, call your API with the userInput, then handle the response
         callAPI(with: userInput)
-        
-        // Clear the user input field
         userInput = ""
     }
 
     func callAPI(with query: String) {
-        // This is a placeholder function. You'll need to implement API calling logic here
-        // For example, using URLSession to fetch data from an API
-        // After fetching the data:
-        receiveMessage("This is a simulated response from the API for '\(query)'")
+        apiService.customChat(question: query, carIssue: carIssues, carDetails: carDetails, carDiagnosis: carDiagnosis) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let response):
+                    self.receiveMessage(response)
+                case .failure(let error):
+                    self.receiveMessage("Error: \(error.localizedDescription)")
+                }
+            }
+        }
     }
 
     func receiveMessage(_ text: String) {
-        // Append the received message to the messages array
         messages.append(Message(content: text, isFromUser: false))
     }
 }
-
