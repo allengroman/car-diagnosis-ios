@@ -31,7 +31,7 @@ struct FinalPage: View {
                     .underline()
                     .foregroundColor(.white)
                     .bold()
-                BubbleBox(text: carDiagnosis)
+                BubbleBox(text: $carDiagnosis)
                 
                 // go to page for chat bot
                 MainButton(title: "Ask more details"){
@@ -43,11 +43,10 @@ struct FinalPage: View {
                 
                 // go to page for finding parts
                 MainButton(title: "Find Parts"){
-                    // call api for parts here
                     showParts = true
                 }
                 .sheet(isPresented: $showParts){
-                    FindParts(partsList: $parts)
+                    FindParts(carDetails: $carDetails, carIssue: $carIssue, carDiagnosis: $carDiagnosis)
                 }
                 
                 // go to page for finding dealers
@@ -61,11 +60,30 @@ struct FinalPage: View {
             }
         }
     }
+
+    func fetchMechanics() {
+        let longitude = -122.431297
+        let latitude = 37.773972
+        
+        let apiService = APIService()
+
+        apiService.getMechanics(longitude: longitude, latitude: latitude) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let mechanicsInfo):
+                    print("Mechanics info: \(mechanicsInfo)")
+                case .failure(let error):
+                    print("Failed to fetch mechanics: \(error.localizedDescription)")
+                }
+            }
+        }
+    }
+
 }
 
 
 struct BubbleBox: View {
-    @State public var text: String
+    @Binding public var text: String
     var body: some View {
         Text(text)
             .font(.system(.body, design: .monospaced)) // Using a monospaced font
